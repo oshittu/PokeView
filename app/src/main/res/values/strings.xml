@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PokeView</string>
+    <string name="pName">pName</string>
+    <string name="pType">pType</string>
+</resources>
