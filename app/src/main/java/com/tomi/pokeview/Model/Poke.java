@@ -1,15 +1,22 @@
-package Model;
+package com.tomi.pokeview.Model;
 
-public class ListItem
+import java.io.Serializable;
+
+public class Poke implements Serializable
 {
+    private static  final long id = 1L;
+
     private String pName;
     private String pType;
 
-    public ListItem(String pName, String pType)
+    public Poke(String pName, String pType)
     {
         this.pName=pName;
         this.pType=pType;
     }
+
+    public Poke()
+    { }
 
     public String getpName() {
         return pName;
