@@ -44,14 +44,14 @@ public class MainActivity extends AppCompatActivity {
         String search = prefs.getSearch();
 
 
-        for(int i=0; i<10; i++)
+        /* for(int i=0; i<10; i++)
         {
             Poke item=new Poke("Pokemon "+(i+1), "PokeType...");
             listItems.add(item);
 
             String eye = String.valueOf(i);
             String url = "https://pokeapi.co/api/v2/pokemon/"+ eye;
-        }
+        } */
 
     }
 
