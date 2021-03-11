@@ -11,7 +11,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.tomi.pokeview.Data.MyAdapter;
 import com.tomi.pokeview.Model.Poke;
 import com.tomi.pokeview.R;
 import com.tomi.pokeview.Util.Prefs;
@@ -75,7 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
                     poke.setpType(typeName);
 
-
+                    JSONObject species = response.getJSONObject("species");
+                    String name = species.getString("name");
+                    poke.setpName(name);
 
 
                 } catch (JSONException e) {
@@ -90,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
                 VolleyLog.d("Error:", error.getMessage());
             }
         });
+
+        return listItems;
     }
 
 }
