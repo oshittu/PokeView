@@ -1,19 +1,14 @@
 package com.tomi.pokeview.Data;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-import com.tomi.pokeview.Activities.DetailsActivity;
 import com.tomi.pokeview.Model.Poke;
 import com.tomi.pokeview.R;
 
@@ -22,11 +17,11 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private Context context;
-    private List<Poke> listItems;
-    public MyAdapter(android.content.Context context, List listItem)
+    private List<Poke> pokeList;
+    public MyAdapter(android.content.Context context, List<Poke> pokes)
     {
         this.context=context;
-        this.listItems=Poke;
+        this.pokeList=pokes;
     }
 
     @NonNull
@@ -38,17 +33,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
-        ListItem item=listItems.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Poke poke = pokeList.get(position);
 
-        holder.pName.setText(item.getpName());
-        holder.pType.setText(item.getpType());
+        holder.pName.setText(poke.getpName());
+        holder.pType.setText(poke.getpType());
     }
 
     @Override
     public int getItemCount()
     {
-        return listItems.size();
+        return pokeList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
